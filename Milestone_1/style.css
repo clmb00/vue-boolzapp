@@ -108,12 +108,59 @@ body{
 .header .avatar *:active{
   filter: brightness(.9);
 }
+
 /* Side chat */
 #chat{
   background-image: url(../img/mine.jpg);
-  min-height: 200px;
+  min-height: min-content;
   flex-grow: 1;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.message{
+  padding: 10px 10px 15px 15px;
+  border-radius: 15px;
+  min-height: 20px;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 10px 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.message.push{
+  align-self: flex-end;
+  background-color: rgb(213, 249, 186);
+  border-bottom-right-radius: 0;
+}
+
+.message.pull{
+  align-self: flex-start;
+  background-color: white;
+  border-bottom-left-radius: 0;
+}
+
+.message p{
+  padding-right: 32px;
+}
+
+.message  i{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: grey;
+  font-size: .7rem;
+  cursor: pointer;
+}
+
+.message span{
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  color: grey;
+  font-size: .7rem;
 }
 
 #input-bar{

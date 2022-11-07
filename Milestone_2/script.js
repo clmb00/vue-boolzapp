@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
   data(){
     return{
+      activeContact: 0,
       contacts: [
         {
           name: 'Michele',
@@ -169,6 +170,9 @@ createApp({
     }
   },
   methods:{
-
+    extractTime(elem){
+      const time = elem.date.split(' ')[1]
+      return time.substring(0,time.length-3);
+    }
   }
 }).mount('#app')

@@ -274,7 +274,7 @@ body{
   cursor: pointer;
 }
 
-.contact:hover{
+.contact:hover, .contact.active{
   background-color: rgb(233, 235, 235);
 }
 

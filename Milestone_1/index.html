@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Font Awosome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Css -->
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
@@ -10,15 +17,56 @@
 
   <div id="app">
     <div class="side side-contacts">
-      <div class="header"></div>
-      <div class="notification-bar"></div>
-      <div class="search-bar"></div>
-      <div class="contacts-list"></div>
+      <div class="header">
+        <div class="account">
+          <div class="avatar">
+            <img src="../img/avatar_io.jpg" alt="">
+          </div>
+          <div class="avatar-details">
+            <span class="name">Sofia</span>
+          </div>
+        </div>
+        <div class="buttons-grp">
+          <div class="button">
+            <i class="fa-solid fa-circle-notch"></i>
+          </div>
+          <div class="button">
+            <i class="fa-solid fa-message"></i>
+          </div>
+          <div class="button">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+      </div>
+      <div id="notification-bar"></div>
+      <div id="search-bar"></div>
+      <div id="contacts-list"></div>
     </div>
     <div class="side side-chat">
-      <div class="header"></div>
-      <div class="chat"></div>
-      <div class="input-bar"></div>
+      <div class="header">
+        <div class="account">
+          <div class="avatar">
+            <img src="../img/avatar_1.jpg" alt="">
+          </div>
+          <div class="avatar-details">
+            <span class="name">Michele</span>
+            <span class="last-access">Ultimo accesso oggi alle 12:00</span>
+          </div>
+        </div>
+        <div class="buttons-grp">
+          <div class="button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="button">
+            <i class="fa-solid fa-paperclip"></i>
+          </div>
+          <div class="button">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+      </div>
+      <div id="chat"></div>
+      <div id="input-bar"></div>
     </div>
   </div>
   

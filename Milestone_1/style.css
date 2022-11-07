@@ -7,6 +7,7 @@
 
 body{
   background: linear-gradient(rgb(0, 150, 136) 15%, rgb(218, 219, 212) 15%);
+  font-family: 'Lato', sans-serif;
 }
 
 #app{
@@ -14,6 +15,59 @@ body{
   width: 80%;
   height: calc(100vh - 30px);
   display: flex;
+}
+
+.button{
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: 0 -2.5px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.button:hover{
+  background-color: rgb(224, 224, 224);
+}
+
+.button:active{
+  background-color: rgb(210, 210, 210);
+}
+
+.avatar img{
+  margin: 0 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar img:hover{
+  filter: brightness(.95);
+}
+
+.avatar img:active{
+  filter: brightness(.9);
+}
+
+.avatar-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.avatar-details span:first-child:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.avatar-details span:nth-child(2){
+  font-size: .9rem;
+  font-weight: 300;
+  color: rgb(100, 100, 100);
 }
 
 /* Layout basic */
@@ -34,35 +88,52 @@ body{
 }
 
 .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   min-height: 60px;
   background-color: rgb(234, 234, 234);
 }
 
+.header .buttons-grp{
+  margin-right: 5px;
+}
+
+.header .buttons-grp > *{
+  font-size: 1.2rem;
+  color: rgb(177, 177, 177);
+}
+
+.header .account{
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
 /* Side chat */
-.chat{
+#chat{
   background-image: url(../img/mine.jpg);
   min-height: 200px;
   flex-grow: 1;
   overflow-y: scroll;
 }
 
-.input-bar{
+#input-bar{
   min-height: 60px;
   background-color: rgb(243, 238, 234);
 }
 
 /* Side contacts */
-.notification-bar{
+#notification-bar{
   min-height: 70px;
   background-color: rgb(142, 218, 252);
 }
 
-.search-bar{
+#search-bar{
   min-height: 40px;
   background-color: rgb(250, 250, 250);
 }
 
-.contacts-list{
+#contacts-list{
   min-height: 150px;
   flex-grow: 1;
   overflow-y: scroll;

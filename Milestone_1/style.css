@@ -26,6 +26,7 @@ body{
   margin: 0 -2.5px;
   display: inline-block;
   border-radius: 50%;
+  font-size: 1.2rem;
 }
 
 .button:hover{
@@ -36,7 +37,7 @@ body{
   background-color: rgb(210, 210, 210);
 }
 
-.avatar img{
+.avatar > *{
   margin: 0 10px;
   height: 40px;
   width: 40px;
@@ -44,15 +45,15 @@ body{
   cursor: pointer;
 }
 
-.avatar img:hover{
-  filter: brightness(.95);
-}
-
-.avatar img:active{
+.avatar *:hover{
   filter: brightness(.9);
 }
 
-.avatar-details{
+.avatar *:active{
+  filter: brightness(.9);
+}
+
+.avatar-details, #notification-descr{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,13 +101,12 @@ body{
 }
 
 .header .buttons-grp > *{
-  font-size: 1.2rem;
+  
   color: rgb(177, 177, 177);
 }
 
-.header .account{
+.header .account, #notification-bar{
   display: flex;
-  height: 100%;
   align-items: center;
 }
 /* Side chat */
@@ -126,11 +126,71 @@ body{
 #notification-bar{
   min-height: 70px;
   background-color: rgb(142, 218, 252);
+  padding: 0px 10px;
+}
+
+#notification-bar .avatar i{
+  color: rgb(142, 218, 252);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+#notification-descr span:first-child{
+  font-size: .9rem;
+}
+
+#notification-descr span:nth-child(2){
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: .8rem;
+  font-weight: 300;
+  color: rgb(100, 100, 100);
 }
 
 #search-bar{
-  min-height: 40px;
+  min-height: 44px;
   background-color: rgb(250, 250, 250);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.src-btn, #search-bar input{
+  background-color: white;
+  box-shadow: 0 0 1px lightgray;
+  height: 28px;
+}
+
+.src-btn{
+  padding: 5px 20px;
+  box-shadow: 0 0 1px lightgray;
+  color: rgb(185, 185, 185);
+  cursor: pointer;
+}
+
+.src-btn:hover{
+  background-color: rgb(250, 250, 250);
+}
+
+.src-btn:active{
+  box-shadow: 0 0 1px grey;
+  color: rgb(165, 165, 165);
+}
+
+#search-bar input{
+  padding: 0 10px;
+  flex-grow: 1;
+  font-size: .75rem;
+  outline: none;
+  border: none;
+}
+
+#search-bar input:focus{
+  box-shadow: 0 0 1px grey;
 }
 
 #contacts-list{

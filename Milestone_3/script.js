@@ -4,6 +4,7 @@ createApp({
   data(){
     return{
       activeContact: 0,
+      yourMessage: "",
       contacts: [
         {
           name: 'Michele',
@@ -173,6 +174,34 @@ createApp({
     extractTime(elem){
       const time = elem.date.split(' ')[1]
       return time.substring(0,time.length-3);
+    },
+    addZero(num){
+      return (num < 10) ? '0' + num : num
+    },
+    createDate(){
+      const d = new Date();
+      return d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' ' + this.addZero(d.getHours()) + ':' + this.addZero(d.getMinutes()) + ':' + this.addZero(d.getSeconds());
+    },
+    writeMessage(){
+      if (this.yourMessage == "") return
+      this.contacts[this.activeContact].messages.push(
+        {
+          date: this.createDate(),
+          message: this.yourMessage,
+          status: 'sent'
+        }
+      )
+      this.yourMessage = "";
+      setTimeout(function(){this.aiResponse()}.bind(this), 1000);
+    },
+    aiResponse(){
+      this.contacts[this.activeContact].messages.push(
+        {
+          date: this.createDate(),
+          message: 'Ok!',
+          status: 'received'
+        }
+      )
     }
   }
 }).mount('#app')

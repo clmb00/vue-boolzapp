@@ -11,7 +11,7 @@ createApp({
         {
           name: 'Michele',
           avatar: '_1',
-          visible: true,
+          id: 0,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -36,7 +36,7 @@ createApp({
         {
           name: 'Fabio',
           avatar: '_2',
-          visible: true,
+          id: 1,
           messages: [
             {
               date: '20/03/2020 16:30:00',
@@ -61,7 +61,7 @@ createApp({
         {
           name: 'Samuele',
           avatar: '_3',
-          visible: true,
+          id: 2,
           messages: [
             {
               date: '28/03/2020 10:10:40',
@@ -86,7 +86,7 @@ createApp({
         {
           name: 'Alessandro B.',
           avatar: '_4',
-          visible: true,
+          id: 3,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -105,7 +105,7 @@ createApp({
         {
           name: 'Alessandro L.',
           avatar: '_5',
-          visible: true,
+          id: 4,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -124,7 +124,7 @@ createApp({
         {
           name: 'Claudia',
           avatar: '_6',
-          visible: true,
+          id: 5,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -149,7 +149,7 @@ createApp({
         {
           name: 'Federico',
           avatar: '_7',
-          visible: true,
+          id: 6,
           messages: [
             {
               date: '10/01/2020 15:30:55',
@@ -168,7 +168,7 @@ createApp({
         {
           name: 'Davide',
           avatar: '_8',
-          visible: true,
+          id: 7,
           messages: [
             {
               date: '10/01/2020 15:30:55',

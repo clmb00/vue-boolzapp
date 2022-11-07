@@ -63,7 +63,7 @@
 
       <div id="contacts-list">
 
-        <div class="contact" v-for="(contact, index) in filteredContacts" :class="{'active': index == activeContact}" @click="activeContact = index">
+        <div class="contact" v-for="(contact, index) in filteredContacts" :class="{'active': index == activeContact}" @click="activeContact = contact.id">
           <div class="account">
             <div class="avatar">
               <img :src="'../img/avatar' + contact.avatar + '.jpg'" alt="">

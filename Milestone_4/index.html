@@ -54,15 +54,16 @@
       </div>
 
       <div id="search-bar">
-        <div class="src-btn">
+        <div class="src-btn" @keyup="filterContacts()">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
+        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model.trim="searchString" @keyup="filterContacts()">
+
       </div>
 
       <div id="contacts-list">
 
-        <div class="contact" v-for="(contact, index) in contacts" :class="{'active': index == activeContact}" @click="activeContact = index">
+        <div class="contact" v-for="(contact, index) in filteredContacts" :class="{'active': index == activeContact}" @click="activeContact = index">
           <div class="account">
             <div class="avatar">
               <img :src="'../img/avatar' + contact.avatar + '.jpg'" alt="">

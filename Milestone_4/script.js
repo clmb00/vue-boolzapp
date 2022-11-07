@@ -5,6 +5,8 @@ createApp({
     return{
       activeContact: 0,
       yourMessage: "",
+      searchString: "",
+      filteredContacts: [],
       contacts: [
         {
           name: 'Michele',
@@ -202,6 +204,14 @@ createApp({
           status: 'received'
         }
       )
+    },
+    filterContacts(){
+      this.filteredContacts = this.contacts.filter((contact) => {
+        return contact.name.toLowerCase().includes(this.searchString.toLowerCase());
+      })
     }
+  },
+  mounted(){
+    this.filterContacts();
   }
 }).mount('#app')

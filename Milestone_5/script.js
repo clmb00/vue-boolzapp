@@ -211,7 +211,8 @@ createApp({
         {
           date: this.createDate(),
           message: this.yourMessage,
-          status: 'sent'
+          status: 'sent',
+          selected: [false, false]
         }
       )
       this.yourMessage = "";
@@ -222,7 +223,8 @@ createApp({
         {
           date: this.createDate(),
           message: 'Ok!',
-          status: 'received'
+          status: 'received',
+          selected: [false, false]
         }
       )
     },

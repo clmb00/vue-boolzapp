@@ -108,9 +108,13 @@
       </div>
 
       <div id="chat">
-        <div class="message" v-for="msg in contacts[activeContact].messages" :class="(msg.status == 'sent') ? 'push' : 'pull'">
+        <div class="message" v-for="(msg, index) in contacts[activeContact].messages" :class="(msg.status == 'sent') ? 'push' : 'pull'" @mouseover="msg.selected[0]=true" @mouseleave="msg.selected[0]=0">
           <p>{{msg.message}}</p>
-          <i class="fa-solid fa-chevron-down"></i>
+          <i class="fa-solid fa-chevron-down" v-if="msg.selected[0]" @click="msg.selected[1]=!msg.selected[1]"></i>
+          <div class="drop-msg-menu" v-if="msg.selected[1]" @mouseleave="msg.selected[1]=0">
+            <div>Message info</div>
+            <div @click="deleteMsg(index)">Delete message</div>
+          </div>
           <span>{{extractTime(msg)}}</span>
         </div>
       </div>

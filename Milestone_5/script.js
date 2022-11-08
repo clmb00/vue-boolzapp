@@ -235,6 +235,10 @@ createApp({
     },
     deleteMsg(index){
       this.contacts[this.activeContact].messages.splice(index, 1);
+    },
+    lastAccess(){
+      const index = this.contacts[this.activeContact].messages.map(msg => msg.status).lastIndexOf('received');
+      return this.extractTime(this.contacts[this.activeContact].messages[index]);
     }
   },
   mounted(){

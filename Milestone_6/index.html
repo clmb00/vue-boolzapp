@@ -22,25 +22,25 @@
     <div id="access-page" v-if="!access">
       <h1><span id="welcome">welcome to</span> Boolzapp</h1>
       <div>
-        <input type="email" placeholder="Email">
+        <input type="email" placeholder="Email" v-model="inputMail" @keydown.enter="checkLogin()">
         <i class="fa-regular fa-envelope"></i>
       </div>
       <div>
-        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Password" v-model="inputPsw" @keydown.enter="checkLogin()">
         <i class="fa-solid fa-lock"></i>
       </div>
-      <button>Log in</button>
+      <button @click="checkLogin()">Log in</button>
     </div>
 
     <div class="side side-contacts" v-if="access">
 
       <div class="header">
         <div class="account">
-          <div class="avatar">
-            <img src="../img/avatar_io.jpg" alt="">
+          <div class="avatar" @click="">
+            <img :src="'../img/avatar' + currentUser.avatar + '.jpg'" alt="">
           </div>
           <div class="avatar-details">
-            <span class="name">Sofia</span>
+            <span class="name">{{currentUser.name}}</span>
           </div>
         </div>
         <div class="buttons-grp">

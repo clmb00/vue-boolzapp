@@ -8,8 +8,12 @@ createApp({
       searchString: "",
       filteredContacts: [],
       toggleEmoji: false,
+      toggleLogOutPannel: false,
       access: false,
+      inputMail: "",
+      inputPsw: "",
       contacts: [],
+      currentUser: {},
       users: [
         {
           id: 0,
@@ -207,7 +211,7 @@ createApp({
           name: 'Michele',
           avatar: '_1',
           email: 'michele@gmail.com',
-          password: 'password',
+          password: 'password1',
           myContacts: [
             {
               name: 'Sofia',
@@ -330,9 +334,16 @@ createApp({
       const index = this.contacts[this.activeContact].messages.map(msg => msg.status).lastIndexOf('received');
       if (index == -1) return '00:00';
       return this.extractTime(this.contacts[this.activeContact].messages[index]);
+    },
+    checkLogin(){
+      this.currentUser = this.users.find((user) => user.email == this.inputMail && user.password == this.inputPsw);
+      if(this.currentUser){
+        this.access = true;
+        this.contacts = [...this.currentUser.myContacts];
+      } else {
+        alert('Incorrect email or/and passoword, please retry!')
+      }
+      this.filterContacts();
     }
-  },
-  mounted(){
-    this.filterContacts();
   }
 }).mount('#app')

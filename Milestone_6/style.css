@@ -15,6 +15,7 @@ body{
   width: 80%;
   height: calc(100vh - 30px);
   display: flex;
+  align-items: center;
 }
 
 .button{
@@ -342,3 +343,107 @@ body{
   display: inline-block;
   width: 50px;
 }
+
+/* Login Page */
+
+#access-page{
+  margin: 0 auto;
+  background-color: white;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  font-size: 5rem;
+  color: rgb(0, 150, 136);
+  margin-bottom: 100px;
+  margin-top: 40px;
+}
+
+h1>span{
+  font-size: 3.8rem;
+  color: #dadbd4;
+}
+
+#access-page > div{
+  margin-bottom: 40px;
+  position: relative;
+}
+
+#access-page i{
+  width: 50px;
+  height: 50px;
+  color: lightgrey;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  border: 1px solid #dadbd4;
+  border-right: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#access-page input{
+  margin-left: 50px;
+  width: 320px;
+  height: 50px;
+  padding-left: 10px;
+  vertical-align: middle;
+  border: 1px solid #dadbd4;
+  border-left: none;
+  outline: none;
+  color: rgb(0, 150, 136);
+}
+
+#access-page input:focus{
+  border-color: rgb(0, 150, 136);
+}
+
+#access-page input:focus ~ *{
+  color: rgb(0, 150, 136);
+  border-color: rgb(0, 150, 136);
+}
+
+#access-page input::placeholder{
+  color: grey;
+}
+
+#access-page button{
+  padding: 12px 24px;
+  background-color: rgb(0, 150, 136);
+  box-shadow: 0 4px 10px rgba(45, 169, 173, 0.15) ;
+  border-radius: 8px;
+  border-style: none;
+  margin-bottom: auto;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: all .3s;
+  user-select: none;
+  font-weight: bold;
+}
+
+#access-page button:hover{
+  background-color: rgb(0, 141, 127);
+  box-shadow: 0 6px 12px rgba(45, 169, 173, 0.15) ;
+  transform: translateY(0px);
+  transition-duration: .3s;
+}
+
+#access-page button:active{
+  transform: translateY(2px);
+  transition-duration: .3s;
+}
+
+@media (max-width: 1100px){
+  #welcome{
+    display: none;
+  }
+} 

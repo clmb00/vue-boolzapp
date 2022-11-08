@@ -8,190 +8,279 @@ createApp({
       searchString: "",
       filteredContacts: [],
       toggleEmoji: false,
-      contacts: [
+      access: false,
+      contacts: [],
+      users: [
         {
+          id: 0,
+          name: 'Sofia',
+          avatar: '_io',
+          email: 'sofia@gmail.com',
+          password: 'password',
+          myContacts: [
+            {
+              name: 'Michele',
+              avatar: '_1',
+              id: 0,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Hai portato a spasso il cane?',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'Ricordati di stendere i panni',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 16:15:22',
+                  message: 'Tutto fatto!',
+                  status: 'received',
+                  selected: [false, false]
+                }
+              ],
+            },
+            {
+              name: 'Fabio',
+              avatar: '_2',
+              id: 1,
+              messages: [
+                {
+                  date: '20/03/2020 16:30:00',
+                  message: 'Ciao come stai?',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '20/03/2020 16:30:55',
+                  message: 'Bene grazie! Stasera ci vediamo?',
+                  status: 'received',
+                  selected: [false, false]
+                },
+                {
+                  date: '20/03/2020 16:35:00',
+                  message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                  status: 'sent',
+                  selected: [false, false]
+                }
+              ],
+            },
+            {
+              name: 'Samuele',
+              avatar: '_3',
+              id: 2,
+              messages: [
+                {
+                  date: '28/03/2020 10:10:40',
+                  message: 'La Marianna va in campagna',
+                  status: 'received',
+                  selected: [false, false]
+                },
+                {
+                  date: '28/03/2020 10:20:10',
+                  message: 'Sicuro di non aver sbagliato chat?',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '28/03/2020 16:15:22',
+                  message: 'Ah scusa!',
+                  status: 'received',
+                  selected: [false, false]
+                }
+              ],
+            },
+            {
+              name: 'Alessandro B.',
+              avatar: '_4',
+              id: 3,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Lo sai che ha aperto una nuova pizzeria?',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'Si, ma preferirei andare al cinema',
+                  status: 'received',
+                  selected: [false, false]
+                } 
+              ],
+            },
+            {
+              name: 'Alessandro L.',
+              avatar: '_5',
+              id: 4,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Ricordati di chiamare la nonna',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'Va bene, stasera la sento',
+                  status: 'received',
+                  selected: [false, false]
+                }
+              ],
+            },
+            {
+              name: 'Claudia',
+              avatar: '_6',
+              id: 5,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Ciao Claudia, hai novità?',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'Non ancora',
+                  status: 'received',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:51:00',
+                  message: 'Nessuna nuova, buona nuova',
+                  status: 'sent',
+                  selected: [false, false]
+                }
+              ],
+            },
+            {
+              name: 'Federico',
+              avatar: '_7',
+              id: 6,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                  status: 'received',
+                  selected: [false, false]
+                }
+              ],
+            },
+            {
+              name: 'Davide',
+              avatar: '_8',
+              id: 7,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                  status: 'received',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:51:00',
+                  message: 'OK!!',
+                  status: 'received',
+                  selected: [false, false]
+                }
+              ],
+            }
+          ]
+        },
+        {
+          id: 1,
           name: 'Michele',
           avatar: '_1',
-          id: 0,
-          messages: [
+          email: 'michele@gmail.com',
+          password: 'password',
+          myContacts: [
             {
-              date: '10/01/2020 15:30:55',
-              message: 'Hai portato a spasso il cane?',
-              status: 'sent',
-              selected: [false, false]
+              name: 'Sofia',
+              avatar: '_io',
+              id: 0,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Hai portato a spasso il cane?',
+                  status: 'received',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'Ricordati di stendere i panni',
+                  status: 'received',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 16:15:22',
+                  message: 'Tutto fatto!',
+                  status: 'sent',
+                  selected: [false, false]
+                }
+              ],
             },
             {
-              date: '10/01/2020 15:50:00',
-              message: 'Ricordati di stendere i panni',
-              status: 'sent',
-              selected: [false, false]
+              name: 'Davide',
+              avatar: '_8',
+              id: 1,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                  status: 'received',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:51:00',
+                  message: 'OK!!',
+                  status: 'received',
+                  selected: [false, false]
+                }
+              ],
             },
             {
-              date: '10/01/2020 16:15:22',
-              message: 'Tutto fatto!',
-              status: 'received',
-              selected: [false, false]
+              name: 'Alessandro B.',
+              avatar: '_4',
+              id: 2,
+              messages: [
+                {
+                  date: '10/01/2020 15:30:55',
+                  message: 'Lo sai che ha aperto una nuova pizzeria?',
+                  status: 'sent',
+                  selected: [false, false]
+                },
+                {
+                  date: '10/01/2020 15:50:00',
+                  message: 'Si, ma preferirei andare al cinema',
+                  status: 'received',
+                  selected: [false, false]
+                } 
+              ],
             }
-          ],
-        },
-        {
-          name: 'Fabio',
-          avatar: '_2',
-          id: 1,
-          messages: [
-            {
-              date: '20/03/2020 16:30:00',
-              message: 'Ciao come stai?',
-              status: 'sent',
-              selected: [false, false]
-            },
-            {
-              date: '20/03/2020 16:30:55',
-              message: 'Bene grazie! Stasera ci vediamo?',
-              status: 'received',
-              selected: [false, false]
-            },
-            {
-              date: '20/03/2020 16:35:00',
-              message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-              status: 'sent',
-              selected: [false, false]
-            }
-          ],
-        },
-        {
-          name: 'Samuele',
-          avatar: '_3',
-          id: 2,
-          messages: [
-            {
-              date: '28/03/2020 10:10:40',
-              message: 'La Marianna va in campagna',
-              status: 'received',
-              selected: [false, false]
-            },
-            {
-              date: '28/03/2020 10:20:10',
-              message: 'Sicuro di non aver sbagliato chat?',
-              status: 'sent',
-              selected: [false, false]
-            },
-            {
-              date: '28/03/2020 16:15:22',
-              message: 'Ah scusa!',
-              status: 'received',
-              selected: [false, false]
-            }
-          ],
-        },
-        {
-          name: 'Alessandro B.',
-          avatar: '_4',
-          id: 3,
-          messages: [
-            {
-              date: '10/01/2020 15:30:55',
-              message: 'Lo sai che ha aperto una nuova pizzeria?',
-              status: 'sent',
-              selected: [false, false]
-            },
-            {
-              date: '10/01/2020 15:50:00',
-              message: 'Si, ma preferirei andare al cinema',
-              status: 'received',
-              selected: [false, false]
-            } 
-          ],
-        },
-        {
-          name: 'Alessandro L.',
-          avatar: '_5',
-          id: 4,
-          messages: [
-            {
-              date: '10/01/2020 15:30:55',
-              message: 'Ricordati di chiamare la nonna',
-              status: 'sent',
-              selected: [false, false]
-            },
-            {
-              date: '10/01/2020 15:50:00',
-              message: 'Va bene, stasera la sento',
-              status: 'received',
-              selected: [false, false]
-            }
-          ],
-        },
-        {
-          name: 'Claudia',
-          avatar: '_6',
-          id: 5,
-          messages: [
-            {
-              date: '10/01/2020 15:30:55',
-              message: 'Ciao Claudia, hai novità?',
-              status: 'sent',
-              selected: [false, false]
-            },
-            {
-              date: '10/01/2020 15:50:00',
-              message: 'Non ancora',
-              status: 'received',
-              selected: [false, false]
-            },
-            {
-              date: '10/01/2020 15:51:00',
-              message: 'Nessuna nuova, buona nuova',
-              status: 'sent',
-              selected: [false, false]
-            }
-          ],
-        },
-        {
-          name: 'Federico',
-          avatar: '_7',
-          id: 6,
-          messages: [
-            {
-              date: '10/01/2020 15:30:55',
-              message: 'Fai gli auguri a Martina che è il suo compleanno!',
-              status: 'sent',
-              selected: [false, false]
-            },
-            {
-              date: '10/01/2020 15:50:00',
-              message: 'Grazie per avermelo ricordato, le scrivo subito!',
-              status: 'received',
-              selected: [false, false]
-            }
-          ],
-        },
-        {
-          name: 'Davide',
-          avatar: '_8',
-          id: 7,
-          messages: [
-            {
-              date: '10/01/2020 15:30:55',
-              message: 'Ciao, andiamo a mangiare la pizza stasera?',
-              status: 'received',
-              selected: [false, false]
-            },
-            {
-              date: '10/01/2020 15:50:00',
-              message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-              status: 'sent',
-              selected: [false, false]
-            },
-            {
-              date: '10/01/2020 15:51:00',
-              message: 'OK!!',
-              status: 'received',
-              selected: [false, false]
-            }
-          ],
+          ]
         }
-      ]
+      ],
     }
   },
   methods:{

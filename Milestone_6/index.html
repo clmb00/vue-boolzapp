@@ -19,7 +19,20 @@
 
   <div id="app">
 
-    <div class="side side-contacts">
+    <div id="access-page" v-if="!access">
+      <h1><span id="welcome">welcome to</span> Boolzapp</h1>
+      <div>
+        <input type="email" placeholder="Email">
+        <i class="fa-regular fa-envelope"></i>
+      </div>
+      <div>
+        <input type="password" placeholder="Password">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <button>Log in</button>
+    </div>
+
+    <div class="side side-contacts" v-if="access">
 
       <div class="header">
         <div class="account">
@@ -84,7 +97,7 @@
       </div>
     </div>
 
-    <div class="side side-chat">
+    <div class="side side-chat" v-if="access">
 
       <div class="header">
         <div class="account">

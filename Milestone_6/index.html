@@ -36,8 +36,11 @@
 
       <div class="header">
         <div class="account">
-          <div class="avatar" @click="">
+          <div class="avatar" @click="toggleLogOutPannel = !toggleLogOutPannel">
             <img :src="'../img/avatar' + currentUser.avatar + '.jpg'" alt="">
+          </div>
+          <div class="drop-menu logout" v-if="toggleLogOutPannel">
+            <div @click="access = false, toggleLogOutPannel = false, activeContact = 0">Log Out</div>
           </div>
           <div class="avatar-details">
             <span class="name">{{currentUser.name}}</span>

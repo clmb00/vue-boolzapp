@@ -344,6 +344,15 @@ body{
   width: 50px;
 }
 
+.account{
+  position: relative;
+}
+
+.drop-menu.logout{
+  top: 0px;
+  left: 55px;
+}
+
 /* Login Page */
 
 #access-page{

@@ -238,6 +238,7 @@ createApp({
     },
     lastAccess(){
       const index = this.contacts[this.activeContact].messages.map(msg => msg.status).lastIndexOf('received');
+      if (index == -1) return '00:00';
       return this.extractTime(this.contacts[this.activeContact].messages[index]);
     }
   },

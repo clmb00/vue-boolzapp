@@ -1,0 +1,344 @@
+/* General */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(rgb(0, 150, 136) 15%, rgb(218, 219, 212) 15%);
+  font-family: 'Lato', sans-serif;
+}
+
+#app{
+  margin: 15px auto;
+  width: 80%;
+  height: calc(100vh - 30px);
+  display: flex;
+}
+
+.button{
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin: 0 -2.5px;
+  display: inline-block;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.button:hover{
+  background-color: rgb(224, 224, 224);
+}
+
+.button:active{
+  background-color: rgb(210, 210, 210);
+}
+
+.avatar > *{
+  margin: 0 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar-details, #notification-descr{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.avatar-details span:first-child:hover{
+  cursor: pointer;
+}
+
+.avatar-details span:nth-child(2){
+  font-size: .9rem;
+  font-weight: 300;
+  color: rgb(100, 100, 100);
+}
+
+.drop-menu{
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 150px;
+  height: fit-content;
+  background-color: white;
+  padding: 4px 0px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px darkgrey;
+}
+
+.drop-menu div{
+  padding: 10px 20px;
+  font-size: .9rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.drop-menu div:hover{
+  background-color: rgb(243, 238, 234);
+}
+
+/* Layout basic */
+.side{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.side-contacts{
+  width: 35%;
+  background: yellow;
+  border-right: 2px solid rgb(222, 222, 222);
+}
+
+.side-chat{
+  width: 65%;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  background-color: rgb(234, 234, 234);
+}
+
+.header .buttons-grp{
+  margin-right: 5px;
+}
+
+.header .buttons-grp > *{
+  
+  color: rgb(177, 177, 177);
+}
+
+.header .account, #notification-bar{
+  display: flex;
+  align-items: center;
+}
+
+.header .avatar *:hover{
+  filter: brightness(.9);
+}
+
+.header .avatar *:active{
+  filter: brightness(.9);
+}
+
+/* Side chat */
+#chat{
+  background-image: url(../img/mine.jpg);
+  min-height: min-content;
+  flex-grow: 1;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.message{
+  padding: 10px 10px 15px 15px;
+  border-radius: 15px;
+  min-height: 20px;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 10px 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.message.push{
+  align-self: flex-end;
+  background-color: rgb(213, 249, 186);
+  border-bottom-right-radius: 0;
+}
+
+.message.pull{
+  align-self: flex-start;
+  background-color: white;
+  border-bottom-left-radius: 0;
+}
+
+.message p{
+  padding-right: 32px;
+}
+
+.message  i{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: grey;
+  font-size: .7rem;
+  cursor: pointer;
+}
+
+.message span{
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  color: grey;
+  font-size: .7rem;
+}
+
+#input-bar{
+  min-height: 60px;
+  background-color: rgb(243, 238, 234);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+#input-bar input{
+  padding: 12px 15px;
+  width: 80%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+#input-bar input:focus{
+  box-shadow: 0 0 1px grey;
+}
+
+#input-bar .button{
+  color: grey;
+}
+
+/* Side contacts */
+#notification-bar{
+  min-height: 70px;
+  background-color: rgb(142, 218, 252);
+  padding: 0px 10px;
+}
+
+#notification-bar .avatar i{
+  color: rgb(142, 218, 252);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+#notification-descr span:first-child{
+  font-size: .9rem;
+}
+
+#notification-descr span:nth-child(2){
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: .8rem;
+  font-weight: 300;
+  color: rgb(100, 100, 100);
+}
+
+#search-bar{
+  min-height: 50px;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.src-btn, #search-bar input{
+  background-color: white;
+  box-shadow: 0 0 1px lightgray;
+  height: 35px;
+}
+
+.src-btn{
+  padding: 8px 20px;
+  box-shadow: 0 0 1px lightgray;
+  color: rgb(185, 185, 185);
+  cursor: pointer;
+}
+
+.src-btn:hover{
+  background-color: rgb(250, 250, 250);
+}
+
+.src-btn:active{
+  box-shadow: 0 0 1px grey;
+  color: rgb(165, 165, 165);
+}
+
+#search-bar input{
+  padding: 0 10px;
+  flex-grow: 1;
+  font-size: .75rem;
+  outline: none;
+  border: none;
+}
+
+#search-bar input:focus{
+  box-shadow: 0 0 1px grey;
+}
+
+#contacts-list{
+  min-height: 150px;
+  flex-grow: 1;
+  overflow-y: scroll;
+  background-color: rgb(255, 255, 255);
+}
+
+.contact{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  cursor: pointer;
+}
+
+.contact:hover, .contact.active{
+  background-color: rgb(233, 235, 235);
+}
+
+.contact .account{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.contact .account .avatar img{
+  width: 50px;
+  height: 50px;
+}
+
+.contact .account .avatar-details{
+  height: 70%;
+  justify-content: start;
+}
+
+.contact .account .avatar-details span:nth-child(2){
+  color: grey;
+}
+
+.time{
+  height: 70%;
+  margin-right: 8px;
+  font-size: .6rem;
+  color: grey;
+}
+
+.drop-menu.emoji{
+  top: -152px;
+  left: 5px;
+  width: 150px;
+}
+
+.drop-menu.emoji div{
+  padding: 10px 12px;
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 50px;
+}

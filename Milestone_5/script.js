@@ -7,6 +7,7 @@ createApp({
       yourMessage: "",
       searchString: "",
       filteredContacts: [],
+      toggleEmoji: false,
       contacts: [
         {
           name: 'Michele',

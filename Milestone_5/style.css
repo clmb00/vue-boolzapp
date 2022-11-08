@@ -193,6 +193,7 @@ body{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  position: relative;
 }
 
 #input-bar input{
@@ -327,4 +328,17 @@ body{
   margin-right: 8px;
   font-size: .6rem;
   color: grey;
+}
+
+.drop-msg-menu.emoji{
+  top: -152px;
+  left: 5px;
+  width: 100px;
+}
+
+.drop-msg-menu.emoji div{
+  padding: 10px 12px;
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 50px;
 }

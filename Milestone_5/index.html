@@ -123,8 +123,16 @@
       </div>
 
       <div id="input-bar">
-        <div class="button">
+        <div class="button" @click="toggleEmoji = !toggleEmoji">
           <i class="fa-regular fa-face-smile"></i>
+        </div>
+        <div class="drop-msg-menu emoji" v-if="toggleEmoji">
+          <div @click="yourMessage += '&#128521;', toggleEmoji=false">&#128521;</div>
+          <div @click="yourMessage += '&#128534;', toggleEmoji=false">&#128534;</div>
+          <div @click="yourMessage += '&#128580;', toggleEmoji=false">&#128580;</div>
+          <div @click="yourMessage += '&#128560;', toggleEmoji=false">&#128560;</div>
+          <div @click="yourMessage += '&#128523;', toggleEmoji=false">&#128523;</div>
+          <div @click="yourMessage += '&#128519;', toggleEmoji=false">&#128519;</div>
         </div>
         <input type="text" placeholder="Scrivi un messaggio" v-model="yourMessage" @keyup.enter="writeMessage()">
         <div class="button">

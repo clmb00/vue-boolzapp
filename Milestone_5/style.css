@@ -62,6 +62,30 @@ body{
   color: rgb(100, 100, 100);
 }
 
+.drop-menu{
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 150px;
+  height: fit-content;
+  background-color: white;
+  padding: 4px 0px;
+  border-radius: 4px;
+  box-shadow: 0 0 5px darkgrey;
+}
+
+.drop-menu div{
+  padding: 10px 20px;
+  font-size: .9rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.drop-menu div:hover{
+  background-color: rgb(243, 238, 234);
+}
+
 /* Layout basic */
 .side{
   display: flex;
@@ -161,30 +185,6 @@ body{
   bottom: 5px;
   color: grey;
   font-size: .7rem;
-}
-
-.drop-msg-menu{
-  z-index: 1;
-  position: absolute;
-  top: 20px;
-  right: 10px;
-  width: 150px;
-  height: fit-content;
-  background-color: white;
-  padding: 4px 0px;
-  border-radius: 4px;
-  box-shadow: 0 0 5px darkgrey;
-}
-
-.drop-msg-menu div{
-  padding: 10px 20px;
-  font-size: .9rem;
-  cursor: pointer;
-  user-select: none;
-}
-
-.drop-msg-menu div:hover{
-  background-color: rgb(243, 238, 234);
 }
 
 #input-bar{
@@ -330,13 +330,13 @@ body{
   color: grey;
 }
 
-.drop-msg-menu.emoji{
+.drop-menu.emoji{
   top: -152px;
   left: 5px;
-  width: 100px;
+  width: 150px;
 }
 
-.drop-msg-menu.emoji div{
+.drop-menu.emoji div{
   padding: 10px 12px;
   font-size: 1.2rem;
   display: inline-block;

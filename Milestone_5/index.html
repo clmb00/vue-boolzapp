@@ -114,7 +114,7 @@
         <div class="message" v-for="(msg, index) in contacts[activeContact].messages" :class="(msg.status == 'sent') ? 'push' : 'pull'" @mouseover="msg.selected[0]=true" @mouseleave="msg.selected[0]=0">
           <p>{{msg.message}}</p>
           <i class="fa-solid fa-chevron-down" v-if="msg.selected[0]" @click="msg.selected[1]=!msg.selected[1]"></i>
-          <div class="drop-msg-menu" v-if="msg.selected[1]" @mouseleave="msg.selected[1]=0">
+          <div class="drop-menu" v-if="msg.selected[1]" @mouseleave="msg.selected[1]=0">
             <div>Message info</div>
             <div @click="deleteMsg(index)">Delete message</div>
           </div>
@@ -126,13 +126,16 @@
         <div class="button" @click="toggleEmoji = !toggleEmoji">
           <i class="fa-regular fa-face-smile"></i>
         </div>
-        <div class="drop-msg-menu emoji" v-if="toggleEmoji">
+        <div class="drop-menu emoji" v-if="toggleEmoji">
           <div @click="yourMessage += '&#128521;', toggleEmoji=false, $refs.input.focus()">&#128521;</div>
           <div @click="yourMessage += '&#128534;', toggleEmoji=false, $refs.input.focus()">&#128534;</div>
           <div @click="yourMessage += '&#128580;', toggleEmoji=false, $refs.input.focus()">&#128580;</div>
           <div @click="yourMessage += '&#128560;', toggleEmoji=false, $refs.input.focus()">&#128560;</div>
           <div @click="yourMessage += '&#128523;', toggleEmoji=false, $refs.input.focus()">&#128523;</div>
           <div @click="yourMessage += '&#128519;', toggleEmoji=false, $refs.input.focus()">&#128519;</div>
+          <div @click="yourMessage += '&#128520;', toggleEmoji=false, $refs.input.focus()">&#128520;</div>
+          <div @click="yourMessage += '&#128536;', toggleEmoji=false, $refs.input.focus()">&#128536;</div>
+          <div @click="yourMessage += '&#128556;', toggleEmoji=false, $refs.input.focus()">&#128556;</div>
         </div>
         <input type="text" placeholder="Scrivi un messaggio" v-model="yourMessage" @keyup.enter="writeMessage()" ref="input">
         <div class="button">

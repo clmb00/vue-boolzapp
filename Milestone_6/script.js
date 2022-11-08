@@ -1,3 +1,7 @@
+// MAIL1: sofia@gmail.com PSW1: password
+// MAIL2: michele@gmail.com PSW2: password1
+
+
 const { createApp } = Vue;
 
 createApp({
@@ -9,6 +13,7 @@ createApp({
       filteredContacts: [],
       toggleEmoji: false,
       toggleLogOutPannel: false,
+      toggleLock: false,
       access: false,
       inputMail: "",
       inputPsw: "",
@@ -338,12 +343,26 @@ createApp({
     checkLogin(){
       this.currentUser = this.users.find((user) => user.email == this.inputMail && user.password == this.inputPsw);
       if(this.currentUser){
-        this.access = true;
+        this.toggleLock = true;
+        // Timeout per far vedere il lock che cambia
+        setTimeout(()=>{
+          this.access = true;
+        },500)
         this.contacts = [...this.currentUser.myContacts];
       } else {
         alert('Incorrect email or/and passoword, please retry!')
       }
       this.filterContacts();
+    },
+    logOut(){
+      this.access = false;
+      this.toggleLogOutPannel = false;
+      this.toggleLock = false;
+      this.toggleEmoji= false,
+      this.activeContact = 0;
+      this.yourMessage= "";
+      this.searchString= "";
+      this.filteredContacts= [];
     }
   }
 }).mount('#app')

@@ -27,7 +27,8 @@
       </div>
       <div>
         <input type="password" placeholder="Password" v-model="inputPsw" @keydown.enter="checkLogin()">
-        <i class="fa-solid fa-lock"></i>
+        <i class="fa-solid fa-lock" v-if="!toggleLock"></i>
+        <i class="fa-solid fa-unlock" v-if="toggleLock"></i>
       </div>
       <button @click="checkLogin()">Log in</button>
     </div>
@@ -40,7 +41,7 @@
             <img :src="'../img/avatar' + currentUser.avatar + '.jpg'" alt="">
           </div>
           <div class="drop-menu logout" v-if="toggleLogOutPannel">
-            <div @click="access = false, toggleLogOutPannel = false, activeContact = 0">Log Out</div>
+            <div @click="logOut()">Log Out</div>
           </div>
           <div class="avatar-details">
             <span class="name">{{currentUser.name}}</span>

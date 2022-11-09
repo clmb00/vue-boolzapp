@@ -3,6 +3,7 @@
 
 
 const { createApp } = Vue;
+const dt = luxon.DateTime;
 
 createApp({
   data(){
@@ -300,15 +301,15 @@ createApp({
     addZero(num){
       return (num < 10) ? '0' + num : num
     },
-    createDate(){
-      const d = new Date();
-      return d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' ' + this.addZero(d.getHours()) + ':' + this.addZero(d.getMinutes()) + ':' + this.addZero(d.getSeconds());
-    },
+    // createDate(){
+    //   const d = new Date();
+    //   return d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear() + ' ' + this.addZero(d.getHours()) + ':' + this.addZero(d.getMinutes()) + ':' + this.addZero(d.getSeconds());
+    // },
     writeMessage(){
       if (this.yourMessage == "") return
       this.contacts[this.activeContact].messages.push(
         {
-          date: this.createDate(),
+          date: dt.now().setLocale('it').toFormat("dd'/'LL'/'yyyy HH':'mm':'ss"),
           message: this.yourMessage,
           status: 'sent',
           selected: [false, false]
@@ -320,7 +321,7 @@ createApp({
     aiResponse(){
       this.contacts[this.activeContact].messages.push(
         {
-          date: this.createDate(),
+          date: dt.now().setLocale('it').toFormat("dd'/'LL'/'yyyy HH':'mm':'ss"),
           message: 'Ok!',
           status: 'received',
           selected: [false, false]
@@ -363,6 +364,7 @@ createApp({
       this.yourMessage= "";
       this.searchString= "";
       this.filteredContacts= [];
+      console.log(this.contacts)
     }
   }
 }).mount('#app')
